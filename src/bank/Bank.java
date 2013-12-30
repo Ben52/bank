@@ -98,6 +98,26 @@ public class Bank {
         boolean loggedIn = true;
         while(loggedIn){
             System.out.println("Enter T to add a transaction, V to view your transactions and M to go back to the main menu");
+            String choice = scanner.nextLine().toUpperCase();
+            if(choice.equals("T")){
+                System.out.println("Would you like to enter a withdrawel or a deposit? Enter W/D");
+                choice = scanner.nextLine().toUpperCase();
+                if(choice.equals("W")){
+                    System.out.println("Enter the amount of your withdrawel");
+                    Double amount = scanner.nextDouble(); scanner.nextLine();
+                    account.transaction(amount, true);
+                    System.out.println("Thank you. Your balance is now " + account.getBalance());
+                }else if(choice.equals("D")){
+                    System.out.println("Enter the amount of your deposit");
+                    Double amount = scanner.nextDouble(); scanner.nextLine();
+                    account.transaction(amount, false);
+                    System.out.println("Thank you for your deposit, your balance is now " + account.getBalance());
+                }
+            }else if(choice.equals("V")){
+                account.viewTransactions();
+            }else if(choice.equals("M")){
+                break;
+            }
         }
     }
     
