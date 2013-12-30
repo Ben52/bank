@@ -9,12 +9,14 @@ public class Bank {
 
     public static ArrayList<Account> accounts = new ArrayList();
     public static Scanner scanner = new Scanner(System.in);
+    public static NumberFormat currency = NumberFormat.getCurrencyInstance(Locale.ENGLISH);
 
     public static void main(String[] args) {
         new Bank().run();
 
 
-        NumberFormat currency = NumberFormat.getCurrencyInstance(Locale.ENGLISH);
+        
+        //String balanceFormatted = currency.format(account.getBalance()).replace('¤', '$');
   
 
         for (Account account : accounts) {
