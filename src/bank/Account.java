@@ -1,7 +1,9 @@
 
 package bank;
 
+import java.text.NumberFormat;
 import java.util.ArrayList;
+import java.util.Locale;
 
 
 public abstract class Account {
@@ -28,17 +30,17 @@ public abstract class Account {
     
     public abstract void endOfMonth();
     
-    public Double getBalance(){
-        return balance;
+    public String getBalance(){
+        return Bank.currency.format(balance).replace('¤', '$');
     } 
     
     public void transaction(Double amount, boolean debit){
         if(debit){
             this.balance = this.balance - amount;
-            transactions.add("Debit of $" + amount);
+            transactions.add("Debit of " + NumberFormat.getCurrencyInstance().format(amount));
         }else{
             this.balance = this.balance + amount;
-            transactions.add("Credit of $" + amount);   
+            transactions.add("Credit of " + NumberFormat.getCurrencyInstance().format(amount));   
         }
           
     }
@@ -52,6 +54,7 @@ public abstract class Account {
         for(String transaction : transactions){
             System.out.println(transaction);
         }
+        System.out.println("Current balance:    " + this.getBalance());
     }
     
     
