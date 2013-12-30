@@ -31,24 +31,6 @@ public class Bank {
         }
 
 
-        /*
-        
-        
-         accounts.add(s);
-         accounts.add(c);
-        
-      
-        
-         s.transaction(670.0, false);
-         s.transaction(9.98, true);
-         c.transaction(999.99, false);
-         c.transaction(78.99, true);
-         s.endOfMonth();
-         c.endOfMonth();
-         for(Account account : accounts){
-         String balanceFormatted = currency.format(account.getBalance()).replace('¤', '$');
-         System.out.println(balanceFormatted);
-         * */
     }
 
     public void run() {
