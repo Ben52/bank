@@ -15,15 +15,7 @@ public class Bank {
 
 
         NumberFormat currency = NumberFormat.getCurrencyInstance(Locale.ENGLISH);
-        // ArrayList<Account> accounts = new ArrayList<Account>();
-       /* 
-         Savings s = new Savings("Binny");
-         Checking c = new Checking("Obama");
-        
-        
-         accounts.add(c);
-         accounts.add(s);
-         */
+  
 
         for (Account account : accounts) {
 
